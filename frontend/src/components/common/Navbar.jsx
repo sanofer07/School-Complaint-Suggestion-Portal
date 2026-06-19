@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { FiMenu, FiX, FiUser } from 'react-icons/fi';
+import { FiMenu, FiX } from 'react-icons/fi';
 import { useAuth } from '../../context/AuthContext';
 
 const Navbar = () => {
