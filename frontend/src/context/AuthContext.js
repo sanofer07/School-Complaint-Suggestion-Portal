@@ -26,7 +26,7 @@ export const AuthProvider = ({ children }) => {
 
   const fetchUser = async () => {
     try {
-      const { data } = await axios.get('/api/auth/me');
+    const { data } = await axios.get('https://school-complaint-suggestion-portal.onrender.com/api/auth/me');
       setUser(data.user);
     } catch (error) {
       logout();
@@ -36,7 +36,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const login = async (email, password) => {
-    const { data } = await axios.post('/api/auth/login', { email, password });
+    const { data } = await axios.post('https://school-complaint-suggestion-portal.onrender.com/api/auth/login', { email, password });
     localStorage.setItem('token', data.token);
     axios.defaults.headers.common['Authorization'] = `Bearer ${data.token}`;
     setToken(data.token);
@@ -45,7 +45,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const register = async (formData) => {
-    const { data } = await axios.post('/api/auth/register', formData);
+    const { data } = await axios.post('https://school-complaint-suggestion-portal.onrender.com/api/auth/register', formData);
     localStorage.setItem('token', data.token);
     axios.defaults.headers.common['Authorization'] = `Bearer ${data.token}`;
     setToken(data.token);
