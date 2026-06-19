@@ -11,13 +11,7 @@ const app = express();
 connectDB();
 
 // Middleware
-app.use(cors({
-  origin: [
-    'http://localhost:3000',
-    'https://school-complaint-suggestion-portal-4dehpdxqu.vercel.app'
-  ],
-  credentials: true
-}));
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
