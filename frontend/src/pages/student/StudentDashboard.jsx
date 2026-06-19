@@ -18,7 +18,11 @@ const StudentDashboard = () => {
   const fetchComplaints = async () => {
     try {
       const { data } = await complaintAPI.getMy({ limit: 5 });
-      setComplaints(data.complaints);
+
+console.log(data);
+
+setComplaints(data.complaints || []);
+    
     } catch (error) {
       console.error(error);
     } finally {
